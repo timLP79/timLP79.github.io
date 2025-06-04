@@ -1,9 +1,9 @@
 body {
-    background-color: #f0f2f5; /* Light overall background */
+    background-color: #f0f2f5;
 }
 
 .content-box {
-    background-color: white;         /* Or #ffffff or any color */
+    background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
