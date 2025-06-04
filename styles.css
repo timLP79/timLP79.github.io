@@ -1,3 +1,9 @@
 body {
-    background-color: #f8f9fa; /* light gray background */
+    background-color: #f0f2f5; /* Light overall background */
+}
+
+.content-box {
+    background-color: white;         /* Or #ffffff or any color */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
