@@ -12,10 +12,21 @@ body {
     color: #c49b63;
 }
 
-.nav-link.active {
-    color: #c49b63 !important;
-}
-
 .bg-dark {
     background-color: #212529 !important;
+}
+
+.oval-frame {
+    width: 150px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50% / 50%;
+    border: 5px solid #c49b63;
+}
+
+.oval-frame img {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
