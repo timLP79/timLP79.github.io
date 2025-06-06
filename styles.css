@@ -1,9 +1,21 @@
 body {
     background-color: #f0f2f5;
+    overflow-x: hidden;
 }
 
-.content-box {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.nav-link {
+    color: #ffffff;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #c49b63;
+}
+
+.nav-link.active {
+    color: #c49b63 !important;
+}
+
+.bg-dark {
+    background-color: #212529 !important;
 }
