@@ -33,7 +33,7 @@ A simple tool that lets users pick a purchase date and instantly see expiration 
 
 I'm always open to project feedback, collaboration, or just chatting tech.
 
-- Email: `timlpalacios@gmail.com`  
+- Email: `timpalacios@u.boisestate.edu`  
 - GitHub: [@timLP79](https://github.com/timLP79)
 
 ---
