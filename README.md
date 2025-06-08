@@ -1,6 +1,6 @@
 # Hi, I'm Tim Palacios
 
-Welcome to my GitHub! I'm a developer who enjoys building clean, purposeful tools—especially ones that simplify everyday problems.
+Welcome to my GitHub! I'm a developer who enjoys building clean, purposeful tools, especially ones that simplify everyday problems.
 
 ---
 
