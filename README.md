@@ -9,8 +9,6 @@ Welcome to my GitHub! I'm a developer who enjoys building clean, purposeful tool
 ### 🛠️📬 [Help Desk Ticketing System](https://github.com/timLP79/spring_tickets)
 A lightweight Help Desk app for tracking and managing support tickets efficiently.
 
----
-
 ### 🔧 [Warranty Calculator](https://timlp79.github.io/warranty_calculator2/)
 A tool that lets users pick a purchase date and instantly see expiration dates for 1, 3, 5, and 25-year warranties. Fast, focused, and useful for both personal and small business needs.
 
