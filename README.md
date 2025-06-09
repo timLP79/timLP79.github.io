@@ -6,7 +6,7 @@ Welcome to my GitHub! I'm a developer who enjoys building clean, purposeful tool
 
 ## 🧰 Projects I’m Working On
 
-## 🛠️📬 [Help Desk Ticketing System](https://github.com/timLP79/spring_tickets)
+### 🛠️📬 [Help Desk Ticketing System](https://github.com/timLP79/spring_tickets)
 A lightweight Help Desk app for tracking and managing support tickets efficiently.
 
 ---
