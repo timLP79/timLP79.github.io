@@ -30,3 +30,7 @@ body {
     display: block;
     margin: 0 auto;
 }
+
+a.techstack {
+    text-decoration: none;
+}
