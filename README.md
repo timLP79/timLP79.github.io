@@ -6,6 +6,9 @@ Welcome to my GitHub! I'm a developer who enjoys building clean, purposeful tool
 
 ## 🧰 Projects I’m Working On
 
+### 🧪 [E-commerce Site Tester](https://github.com/timLP79/e_commerce_test)
+Playwright-based test suite for validating sorting, login, and product flow on SauceDemo
+
 ### 🛠️📬 [Help Desk Ticketing System](https://github.com/timLP79/spring_tickets)
 A lightweight Help Desk app for tracking and managing support tickets efficiently.
 
@@ -26,7 +29,7 @@ A tool that lets users pick a purchase date and instantly see expiration dates f
 ## 🧑‍💻 Tech I Work With
 
 - **Languages**: Java, JavaScript, SQL  
-- **Web**: HTML5, CSS3, Bootstrap, Spring Boot, Node.js, Express  
+- **Web**: HTML5, CSS3, Bootstrap, Spring Boot, Node.js, Express, Playwright  
 - **Data Tools**: Power BI, Power Query, Power Pivot, Excel  
 - **Other**: Git, GitHub Pages, IntelliJ, Linux
 
