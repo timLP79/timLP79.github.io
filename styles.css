@@ -1,27 +1,107 @@
+/* ================================
+   Custom Fonts
+   ================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* ================================
+   CSS Variables / Custom Properties
+   ================================ */
+:root {
+    /* Colors - Light Mode */
+    --color-bg: #f0f2f5;
+    --color-text: #212529;
+    --color-accent: #c49b63;
+    --color-dark: #212529;
+    --color-white: #ffffff;
+    --color-link: #0d6efd;
+    --color-link-hover: #0a58ca;
+
+    /* Spacing */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.2s ease;
+    --transition-slow: 0.3s ease;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* ================================
+   Dark Mode Variables
+   ================================ */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: #1a1a1a;
+        --color-text: #e0e0e0;
+        --color-dark: #0d0d0d;
+        --color-white: #ffffff;
+        --color-link: #6ea8fe;
+        --color-link-hover: #9ec5fe;
+    }
+}
+
+/* ================================
+   Global Reset
+   ================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* ================================
+   Base Styles
+   ================================ */
 body {
-    background-color: #f0f2f5;
-    overflow-x: hidden;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    /* Removed overflow-x: hidden - fix layout issues instead of hiding them */
+}
+
+/* ================================
+   Navigation Styles
+   ================================ */
+.bg-dark {
+    background-color: var(--color-dark);
 }
 
 .nav-link {
-    color: #ffffff;
+    color: var(--color-white);
+    transition: color var(--transition-normal), transform var(--transition-fast);
 }
 
 .nav-link:hover,
 .nav-link:focus {
-    color: #c49b63;
+    color: var(--color-accent);
+    transform: translateX(4px);
 }
 
-.bg-dark {
-    background-color: #212529 !important;
+/* Improve focus visibility for accessibility */
+.nav-link:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
 }
 
+/* ================================
+   Profile / Oval Frame
+   ================================ */
 .oval-frame {
     width: 150px;
     height: 200px;
     overflow: hidden;
     border-radius: 50% / 50%;
-    border: 5px solid #c49b63;
+    border: 5px solid var(--color-accent);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.oval-frame:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-md);
 }
 
 .oval-frame img {
@@ -31,6 +111,199 @@ body {
     margin: 0 auto;
 }
 
+/* Responsive oval frame for smaller screens */
+@media (max-width: 576px) {
+    .oval-frame {
+        width: 120px;
+        height: 160px;
+    }
+
+    .oval-frame img {
+        width: 120px;
+    }
+}
+
+@media (max-width: 375px) {
+    .oval-frame {
+        width: 100px;
+        height: 133px;
+    }
+
+    .oval-frame img {
+        width: 100px;
+    }
+}
+
+/* ================================
+   Interactive Elements
+   ================================ */
+
+/* Tech stack badges */
 a.techstack {
     text-decoration: none;
+    display: inline-block;
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+a.techstack:hover,
+a.techstack:focus {
+    transform: translateY(-2px);
+    opacity: 0.85;
+}
+
+a.techstack:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* Project cards */
+.card {
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Card links */
+.card-link {
+    transition: color var(--transition-fast), text-decoration var(--transition-fast);
+}
+
+.card-link:hover,
+.card-link:focus {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+/* General links */
+a {
+    transition: color var(--transition-fast);
+}
+
+a:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* ================================
+   Typography Enhancements
+   ================================ */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+}
+
+/* ================================
+   Dark Mode Specific Adjustments
+   ================================ */
+@media (prefers-color-scheme: dark) {
+    .card {
+        background-color: #2d2d2d;
+        border-color: #404040;
+        color: var(--color-text);
+    }
+
+    .list-group-item {
+        background-color: #2d2d2d;
+        border-color: #404040;
+        color: var(--color-text);
+    }
+
+    .oval-frame {
+        border-color: var(--color-accent);
+    }
+}
+
+/* ================================
+   Print Styles
+   ================================ */
+@media print {
+    /* Hide navigation sidebar when printing */
+    .bg-dark {
+        display: none !important;
+    }
+
+    /* Reset background for printing */
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    /* Expand main content to full width */
+    .col {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Remove shadows and transitions for print */
+    .card,
+    .oval-frame {
+        box-shadow: none;
+        transform: none;
+    }
+
+    /* Ensure links show their URLs */
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+
+    /* Don't show URLs for badge images */
+    a.techstack:after {
+        content: "";
+    }
+
+    /* Page breaks */
+    .card {
+        page-break-inside: avoid;
+    }
+
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+}
+
+/* ================================
+   Accessibility Enhancements
+   ================================ */
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus visible for keyboard navigation */
+:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
 }
