@@ -1,20 +1,25 @@
 /* ================================
    Custom Fonts
    ================================ */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=JetBrains+Mono:wght@500&display=swap');
 
 /* ================================
    CSS Variables / Custom Properties
    ================================ */
 :root {
     /* Colors - Light Mode */
-    --color-bg: #f0f2f5;
-    --color-text: #212529;
+    --color-bg: #f4f6f9;
+    --color-surface: #ffffff;
+    --color-text: #1a1d23;
+    --color-text-muted: #6b7280;
     --color-accent: #c49b63;
-    --color-dark: #212529;
+    --color-accent-dim: rgba(196, 155, 99, 0.15);
+    --color-dark: #111317;
     --color-white: #ffffff;
     --color-link: #0d6efd;
     --color-link-hover: #0a58ca;
+    --color-border: rgba(0, 0, 0, 0.08);
+    --color-featured-border: rgba(196, 155, 99, 0.5);
 
     /* Spacing */
     --spacing-sm: 0.5rem;
@@ -27,9 +32,15 @@
     --transition-slow: 0.3s ease;
 
     /* Shadows */
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
-    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.15);
+    --shadow-featured: 0 4px 20px rgba(196, 155, 99, 0.2);
+
+    /* Border radius */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
 }
 
 /* ================================
@@ -37,12 +48,16 @@
    ================================ */
 @media (prefers-color-scheme: dark) {
     :root {
-        --color-bg: #1a1a1a;
-        --color-text: #e0e0e0;
-        --color-dark: #0d0d0d;
+        --color-bg: #0f1117;
+        --color-surface: #1a1d26;
+        --color-text: #e8eaf0;
+        --color-text-muted: #9095a3;
+        --color-dark: #080a0f;
         --color-white: #ffffff;
         --color-link: #6ea8fe;
         --color-link-hover: #9ec5fe;
+        --color-border: rgba(255, 255, 255, 0.07);
+        --color-featured-border: rgba(196, 155, 99, 0.4);
     }
 }
 
@@ -59,33 +74,74 @@
 body {
     background-color: var(--color-bg);
     color: var(--color-text);
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    /* Removed overflow-x: hidden - fix layout issues instead of hiding them */
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
 }
 
 /* ================================
-   Navigation Styles
+   Main Content Area
+   ================================ */
+.content-area {
+    max-width: 1100px;
+}
+
+/* ================================
+   Navigation / Sidebar
    ================================ */
 .bg-dark {
-    background-color: var(--color-dark);
+    background-color: var(--color-dark) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (min-width: 576px) {
+    .sidebar-col {
+        width: 170px;
+        flex: 0 0 170px;
+    }
+}
+
+.sidebar-brand {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: var(--color-white);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 0.75rem;
+}
+
+.sidebar-brand:hover {
+    color: var(--color-accent);
 }
 
 .nav-link {
-    color: var(--color-white);
-    transition: color var(--transition-normal), transform var(--transition-fast);
+    font-family: 'DM Sans', sans-serif;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    padding: 0.45rem 0.6rem;
+    transition: color var(--transition-normal), background var(--transition-normal), transform var(--transition-fast);
 }
 
 .nav-link:hover,
 .nav-link:focus {
-    color: var(--color-accent);
-    transform: translateX(4px);
+    color: var(--color-white);
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateX(3px);
 }
 
-/* Improve focus visibility for accessibility */
 .nav-link:focus {
     outline: 2px solid var(--color-accent);
-    outline-offset: 4px;
+    outline-offset: 2px;
 }
+
 
 /* ================================
    Profile / Oval Frame
@@ -95,13 +151,14 @@ body {
     height: 200px;
     overflow: hidden;
     border-radius: 50% / 50%;
-    border: 5px solid var(--color-accent);
+    border: 3px solid var(--color-accent);
+    box-shadow: 0 0 0 6px var(--color-accent-dim);
     transition: transform var(--transition-normal), box-shadow var(--transition-normal);
 }
 
 .oval-frame:hover {
-    transform: scale(1.05);
-    box-shadow: var(--shadow-md);
+    transform: scale(1.04);
+    box-shadow: 0 0 0 8px var(--color-accent-dim), var(--shadow-md);
 }
 
 .oval-frame img {
@@ -111,7 +168,6 @@ body {
     margin: 0 auto;
 }
 
-/* Responsive oval frame for smaller screens */
 @media (max-width: 576px) {
     .oval-frame {
         width: 120px;
@@ -135,10 +191,192 @@ body {
 }
 
 /* ================================
-   Interactive Elements
+   Section Labels
    ================================ */
+.section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+}
 
-/* Tech stack badges */
+.section-label::after {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: var(--color-accent);
+    opacity: 0.4;
+}
+
+/* ================================
+   Typography
+   ================================ */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+}
+
+h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 1.35rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.6rem;
+}
+
+.card-title {
+    font-family: 'Syne', sans-serif;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    h2 {
+        font-size: 1.15rem;
+    }
+}
+
+/* ================================
+   Cards — Base
+   ================================ */
+.card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-body {
+    padding: 1.4rem 1.5rem;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+}
+
+/* ================================
+   Featured Project Card
+   ================================ */
+.card-featured {
+    border: 1px solid var(--color-featured-border);
+    background: linear-gradient(135deg, rgba(196, 155, 99, 0.06) 0%, var(--color-surface) 55%);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-featured::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-accent) 0%, rgba(196, 155, 99, 0.3) 60%, transparent 100%);
+}
+
+.card-featured:hover {
+    box-shadow: var(--shadow-featured);
+    transform: translateY(-3px);
+}
+
+.card-featured .card-title {
+    font-size: 1.25rem;
+}
+
+.badge-featured {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    background: var(--color-accent-dim);
+    border: 1px solid rgba(196, 155, 99, 0.3);
+    border-radius: 100px;
+    padding: 0.2rem 0.65rem;
+    margin-bottom: 0.75rem;
+}
+
+/* ================================
+   Project Card Actions
+   ================================ */
+.card-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.card-link {
+    font-size: 0.825rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: color var(--transition-fast);
+}
+
+.card-link:hover,
+.card-link:focus {
+    color: var(--color-accent);
+}
+
+.card-link-primary {
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: #111;
+    background: var(--color-accent);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.9rem;
+    border-radius: 100px;
+    transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card-link-primary:hover,
+.card-link-primary:focus {
+    background: #d4ab73;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(196, 155, 99, 0.4);
+    color: #111;
+}
+
+/* ================================
+   Tech Stack Badges
+   ================================ */
 a.techstack {
     text-decoration: none;
     display: inline-block;
@@ -156,29 +394,58 @@ a.techstack:focus {
     outline-offset: 2px;
 }
 
-/* Project cards */
-.card {
-    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-    border: 1px solid rgba(0, 0, 0, 0.125);
+.tech-stack-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.25rem;
 }
 
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+/* ================================
+   Status / Meta Text
+   ================================ */
+.project-meta {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.5rem;
 }
 
-/* Card links */
-.card-link {
-    transition: color var(--transition-fast), text-decoration var(--transition-fast);
+.project-meta strong {
+    color: var(--color-text);
+    font-weight: 600;
 }
 
-.card-link:hover,
-.card-link:focus {
-    color: var(--color-accent);
-    text-decoration: underline;
+/* ================================
+   Focus Areas List (replaces list-group)
+   ================================ */
+.focus-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.25rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
 }
 
-/* General links */
+.focus-list li {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    padding: 0.55rem 0.75rem 0.55rem 1rem;
+    border-left: 2px solid var(--color-accent);
+    background: var(--color-surface);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    box-shadow: var(--shadow-sm);
+}
+
+@media (prefers-color-scheme: dark) {
+    .focus-list li {
+        background: var(--color-surface);
+    }
+}
+
+/* ================================
+   General Links
+   ================================ */
 a {
     transition: color var(--transition-fast);
 }
@@ -189,51 +456,17 @@ a:focus {
 }
 
 /* ================================
-   Typography Enhancements
-   ================================ */
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
-    line-height: 1.2;
-}
-
-h1 {
-    font-size: 2.5rem;
-}
-
-h2 {
-    font-size: 1.5rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.25rem;
-    }
-}
-
-/* ================================
-   Dark Mode Specific Adjustments
+   Dark Mode Adjustments
    ================================ */
 @media (prefers-color-scheme: dark) {
     .card {
-        background-color: #2d2d2d;
-        border-color: #404040;
+        background-color: var(--color-surface);
+        border-color: var(--color-border);
         color: var(--color-text);
     }
 
-    .list-group-item {
-        background-color: #2d2d2d;
-        border-color: #404040;
-        color: var(--color-text);
-    }
-
-    .oval-frame {
-        border-color: var(--color-accent);
+    .card-featured {
+        background: linear-gradient(135deg, rgba(196, 155, 99, 0.08) 0%, var(--color-surface) 55%);
     }
 }
 
@@ -241,43 +474,36 @@ h2 {
    Print Styles
    ================================ */
 @media print {
-    /* Hide navigation sidebar when printing */
     .bg-dark {
         display: none !important;
     }
 
-    /* Reset background for printing */
     body {
         background-color: white;
         color: black;
     }
 
-    /* Expand main content to full width */
     .col {
         width: 100% !important;
         max-width: 100% !important;
     }
 
-    /* Remove shadows and transitions for print */
     .card,
     .oval-frame {
         box-shadow: none;
         transform: none;
     }
 
-    /* Ensure links show their URLs */
     a[href^="http"]:after {
         content: " (" attr(href) ")";
         font-size: 0.8em;
         color: #666;
     }
 
-    /* Don't show URLs for badge images */
     a.techstack:after {
         content: "";
     }
 
-    /* Page breaks */
     .card {
         page-break-inside: avoid;
     }
@@ -288,10 +514,8 @@ h2 {
 }
 
 /* ================================
-   Accessibility Enhancements
+   Accessibility
    ================================ */
-
-/* Reduced motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -302,7 +526,6 @@ h2 {
     }
 }
 
-/* Focus visible for keyboard navigation */
 :focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 4px;

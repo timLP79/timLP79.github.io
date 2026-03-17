@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Tim Palacios | Website</title>
+    <title>Tim Palacios | Projects</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -11,7 +11,7 @@
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Custom CSS (optional) -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css"/>
 
     <!-- Google tag (gtag.js) -->
@@ -20,7 +20,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-NB6CGJ47D2');
     </script>
 </head>
@@ -29,22 +28,23 @@
 <div class="container-fluid">
     <div class="row flex-nowrap">
         <!-- Sidebar -->
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <span class="fs-5 d-none d-sm-inline">Tim Palacios</span>
+        <div class="col-auto sidebar-col px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-3 text-white min-vh-100">
+                <a href="/" class="sidebar-brand d-none d-sm-flex w-100">
+                    <i class="bi bi-code-slash" style="color: var(--color-accent);"></i>
+                    Tim Palacios
                 </a>
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i>
-                            <span class="ms-1 d-none d-sm-inline">Home</span>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100" id="menu">
+                    <li class="nav-item w-100">
+                        <a href="index.html" class="nav-link align-middle px-2">
+                            <i class="fs-5 bi-house-door"></i>
+                            <span class="ms-2 d-none d-sm-inline">Home</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="projects.html" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-folder"></i>
-                            <span class="ms-1 d-none d-sm-inline">Projects</span>
+                    <li class="nav-item w-100">
+                        <a href="projects.html" class="nav-link align-middle px-2 active" style="color: var(--color-accent); background: rgba(196,155,99,0.1);">
+                            <i class="fs-5 bi-folder2-open"></i>
+                            <span class="ms-2 d-none d-sm-inline">Projects</span>
                         </a>
                     </li>
                 </ul>
@@ -52,128 +52,193 @@
         </div>
 
         <!-- Main content -->
-        <div class="col py-3">
-            <h2>Current Projects</h2>
+        <div class="col py-4 px-4">
+          <div class="content-area">
+
+            <!-- Featured -->
+            <div class="section-label">
+                <i class="bi bi-stars"></i> Featured
+            </div>
+            <div class="card card-featured mb-4">
+                <div class="card-body">
+                    <div class="badge-featured">
+                        <i class="bi bi-star-fill"></i> Featured Project
+                    </div>
+                    <h5 class="card-title">Absolute Code</h5>
+                    <p class="project-meta">
+                        <strong>Live at</strong> &mdash;
+                        <a href="https://www.absolute-code.com" target="_blank" rel="noopener noreferrer">absolute-code.com</a>
+                    </p>
+                    <p class="project-meta">
+                        <strong>Status:</strong> Active development &mdash; my most ambitious project to date
+                    </p>
+                    <p class="card-text" style="font-size: 0.9rem;">
+                        A custom software development service focused on solving real business problems —
+                        not generic, off-the-shelf solutions. Built from the ground up with a focus on
+                        clean design and practical engineering.
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.absolute-code.com" class="card-link-primary" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-box-arrow-up-right"></i> Visit Site
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- In Progress -->
+            <div class="section-label mt-3">
+                <i class="bi bi-hammer"></i> In Progress
+            </div>
             <div class="card mb-3">
                 <div class="card-body">
-                    <h5 class="card-title"><u>Spring Tickets</u></h5>
-                    <p class="card-text"><span class="fw-bold">Tech Stack:</span>
+                    <h5 class="card-title">Spring Tickets</h5>
+                    <p class="project-meta">
+                        <strong>Tech Stack:</strong>
+                    </p>
+                    <div class="tech-stack-row mb-3">
                         <a class="techstack" href="https://openjdk.org/projects/jdk/21/" target="_blank" rel="noopener noreferrer">
-                            <img src="https://img.shields.io/badge/Java-21-blue?logo=java" alt="Java Logo" />
+                            <img src="https://img.shields.io/badge/Java-21-blue?logo=java" alt="Java 21" />
                         </a>
                         <a class="techstack" href="https://spring.io/projects/spring-boot" target="_blank" rel="noopener noreferrer">
-                            <img class="techstack" src="https://img.shields.io/badge/Spring_Boot-3.5.0-brightgreen?logo=springboot" alt="Spring Boot Logo" />
+                            <img src="https://img.shields.io/badge/Spring_Boot-3.5.0-brightgreen?logo=springboot" alt="Spring Boot" />
                         </a>
                         <a class="techstack" href="https://gradle.org/" target="_blank" rel="noopener noreferrer">
-                            <img src ="https://img.shields.io/badge/Gradle-Build-blueviolet?logo=gradle" alt="Gradle Build Logo" />
+                            <img src="https://img.shields.io/badge/Gradle-Build-blueviolet?logo=gradle" alt="Gradle" />
                         </a>
                         <a class="techstack" href="https://www.thymeleaf.org/" target="_blank" rel="noopener noreferrer">
-                            <img src ="https://img.shields.io/badge/Template-Thymeleaf-lightgrey?logo=thymeleaf" alt ="Thymeleaf Logo" />
+                            <img src="https://img.shields.io/badge/Thymeleaf-Template-lightgrey?logo=thymeleaf" alt="Thymeleaf" />
                         </a>
-                    </p>
-                    <p class="card-text"><span class="fw-bold">Status:</span> Early stages of development. This
-                        project is currently being built.</p>
-                    <p class="card-text"><span class="fw-bold">Description:</span> A helpdesk ticketing system.</p>
-                    <a href="https://github.com/timLP79/spring_tickets" class="card-link" target="_blank" rel="noopener noreferrer">GitHub
-                        Project</a>
+                    </div>
+                    <p class="project-meta"><strong>Status:</strong> Early development</p>
+                    <p class="card-text" style="font-size: 0.9rem;">A helpdesk ticketing system.</p>
+                    <div class="card-actions">
+                        <a href="https://github.com/timLP79/spring_tickets" class="card-link" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-github"></i> GitHub
+                        </a>
+                    </div>
                 </div>
             </div>
-            <h2>Completed Projects</h2>
+
+            <!-- Completed -->
+            <div class="section-label mt-3">
+                <i class="bi bi-check2-circle"></i> Completed
+            </div>
+
             <div class="card mb-3">
                 <div class="card-body">
-                    <h5 class="card-title"><u>BIN Lookup Tool</u></h5>
-                    <p class="card-text"><span class="fw-bold">Tech Stack:</span>
+                    <h5 class="card-title">BIN Lookup Tool</h5>
+                    <p class="project-meta"><strong>Tech Stack:</strong></p>
+                    <div class="tech-stack-row mb-3">
                         <a class="techstack" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
-                            <img src="https://img.shields.io/badge/JavaScript-ES6+-yellow?logo=javascript" alt="JavaScript Logo" />
+                            <img src="https://img.shields.io/badge/JavaScript-ES6+-yellow?logo=javascript" alt="JavaScript" />
                         </a>
                         <a class="techstack" href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" target="_blank" rel="noopener noreferrer">
-                            <img src="https://img.shields.io/badge/HTML-5-orange?logo=html5" alt="HTML5 Logo" />
+                            <img src="https://img.shields.io/badge/HTML-5-orange?logo=html5" alt="HTML5" />
                         </a>
                         <a class="techstack" href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">
-                            <img src="https://img.shields.io/badge/CSS-3-blue?logo=css3" alt="CSS Logo" />
+                            <img src="https://img.shields.io/badge/CSS-3-blue?logo=css3" alt="CSS3" />
                         </a>
-                    </p>
-                    <p class="card-text"><span class="fw-bold">Status:</span> Completed 11/23/2025</p>
-                    <p class="card-text"><span class="fw-bold">Description:</span> A client-side web application for searching Bank Identification Numbers (BINs) from a comprehensive database. Features real-time BIN and keyword search with pagination, responsive design, and fast in-browser data processing with no backend required.</p>
-                    <a href="https://github.com/timLP79/bin-lookup-js" class="card-link" target="_blank" rel="noopener noreferrer">GitHub Project</a>
-                    <a href="https://timlp79.github.io/bin-lookup-js/" class="card-link" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                    </div>
+                    <p class="project-meta"><strong>Completed:</strong> November 23, 2025</p>
+                    <p class="card-text" style="font-size: 0.9rem;">A client-side web application for searching Bank Identification Numbers (BINs) from a comprehensive database. Features real-time BIN and keyword search with pagination, responsive design, and fast in-browser data processing — no backend required.</p>
+                    <div class="card-actions">
+                        <a href="https://timlp79.github.io/bin-lookup-js/" class="card-link-primary" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-box-arrow-up-right"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/timLP79/bin-lookup-js" class="card-link" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-github"></i> GitHub
+                        </a>
+                    </div>
                 </div>
             </div>
+
             <div class="card mb-3">
                 <div class="card-body">
-                    <h5 class="card-title"><u>Task Manager</u></h5>
-                    <p class="card-text"><span class="fw-bold">Tech Stack:</span>
+                    <h5 class="card-title">Task Manager</h5>
+                    <p class="project-meta"><strong>Tech Stack:</strong></p>
+                    <div class="tech-stack-row mb-3">
                         <a class="techstack" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
-                            <img src="https://img.shields.io/badge/JavaScript-ES6+-yellow?logo=javascript" alt="JavaScript Logo" />
+                            <img src="https://img.shields.io/badge/JavaScript-ES6+-yellow?logo=javascript" alt="JavaScript" />
                         </a>
                         <a class="techstack" href="https://nodejs.org/" target="_blank" rel="noopener noreferrer">
-                            <img src="https://img.shields.io/badge/Node.js-18+-brightgreen?logo=node.js" alt="Node.js Logo" />
+                            <img src="https://img.shields.io/badge/Node.js-18+-brightgreen?logo=node.js" alt="Node.js" />
                         </a>
                         <a class="techstack" href="https://sqlite.org/" target="_blank" rel="noopener noreferrer">
-                            <img src="https://img.shields.io/badge/SQLite-3.49.1-90D4F4?logo=sqlite" alt="Sqlite Logo" />
+                            <img src="https://img.shields.io/badge/SQLite-3.49.1-90D4F4?logo=sqlite" alt="SQLite" />
                         </a>
-                    </p>
-                    <p class="card-text"><span class="fw-bold">Status:</span> Completed 8/14/2025</p>
-                    <p class="card-text"><span class="fw-bold">Description:</span> A lightweight Node.js API for managing tasks, built with Express
-                        and SQLite. It supports full CRUD operations along with filtering, searching, sorting, making it ideal for
-                        small to mid-sized task management needs.
-                    </p>
-                    <a href="https://github.com/timLP79/express-sqlite-tasks-api" class="card-link" target="_blank" rel="noopener noreferrer">GitHub Project</a>
-
+                    </div>
+                    <p class="project-meta"><strong>Completed:</strong> August 14, 2025</p>
+                    <p class="card-text" style="font-size: 0.9rem;">A lightweight Node.js API for managing tasks, built with Express and SQLite. Supports full CRUD operations with filtering, searching, and sorting — ideal for small to mid-sized task management needs.</p>
+                    <div class="card-actions">
+                        <a href="https://github.com/timLP79/express-sqlite-tasks-api" class="card-link" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-github"></i> GitHub
+                        </a>
+                    </div>
                 </div>
             </div>
+
             <div class="card mb-3">
                 <div class="card-body">
-                    <h5 class="card-title"><u>E-commerce Site Tester</u></h5>
-                    <p class="card-text"><span class="fw-bold">Tech Stack:</span>
+                    <h5 class="card-title">E-commerce Site Tester</h5>
+                    <p class="project-meta"><strong>Tech Stack:</strong></p>
+                    <div class="tech-stack-row mb-3">
                         <a class="techstack" href="https://playwright.dev/" target="_blank" rel="noopener noreferrer">
-                            <img src="https://img.shields.io/badge/Tested%20with-Playwright-green?logo=playwright" alt="Playwright Logo" />
+                            <img src="https://img.shields.io/badge/Playwright-green?logo=playwright" alt="Playwright" />
                         </a>
                         <a class="techstack" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
-                            <img src="https://img.shields.io/badge/JavaScript-ES2023-yellow?logo=javascript" alt="JavaScript Logo" />
+                            <img src="https://img.shields.io/badge/JavaScript-ES2023-yellow?logo=javascript" alt="JavaScript" />
                         </a>
                         <a class="techstack" href="https://nodejs.org/" target="_blank" rel="noopener noreferrer">
-                            <img src ="https://img.shields.io/badge/Node.js-18+-brightgreen?logo=node.js" alt="Node.js Logo" />
+                            <img src="https://img.shields.io/badge/Node.js-18+-brightgreen?logo=node.js" alt="Node.js" />
                         </a>
-                    </p>
-                    <p class="card-text"><span class="fw-bold">Status:</span> Completed 6/27/2025</p>
-                    <p class="card-text"><span class="fw-bold">Description:</span> A Playwright-based QA test to login to the
-                        <a href="https://www.saucedemo.com/" target="_blank" rel="noopener noreferrer">Swag Labs demo e-commerce site</a>, then sort the inventory by price from low to high.
-                    </p>
-                    <a href="https://github.com/timLP79/e_commerce_test/" class="card-link" target="_blank" rel="noopener noreferrer">GitHub Project</a>
-
+                    </div>
+                    <p class="project-meta"><strong>Completed:</strong> June 27, 2025</p>
+                    <p class="card-text" style="font-size: 0.9rem;">A Playwright-based QA test that logs into the <a href="https://www.saucedemo.com/" target="_blank" rel="noopener noreferrer">Swag Labs demo e-commerce site</a>, then sorts the inventory by price from low to high.</p>
+                    <div class="card-actions">
+                        <a href="https://github.com/timLP79/e_commerce_test/" class="card-link" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-github"></i> GitHub
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="card mb-3">
+
+            <div class="card mb-4">
                 <div class="card-body">
-                    <h5 class="card-title"><u>Warranty Calculator</u></h5>
-                    <p class="card-text"><span class="fw-bold">Tech Stack:</span>
+                    <h5 class="card-title">Warranty Calculator</h5>
+                    <p class="project-meta"><strong>Tech Stack:</strong></p>
+                    <div class="tech-stack-row mb-3">
                         <a class="techstack" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
-                            <img src="https://img.shields.io/badge/JavaScript-ES6+-yellow?logo=javascript" alt="JavaScript Logo" />
+                            <img src="https://img.shields.io/badge/JavaScript-ES6+-yellow?logo=javascript" alt="JavaScript" />
                         </a>
                         <a class="techstack" href="https://nodejs.org/" target="_blank" rel="noopener noreferrer">
-                            <img src="https://img.shields.io/badge/Node.js-18+-brightgreen?logo=node.js" alt ="Node.js Logo" />
+                            <img src="https://img.shields.io/badge/Node.js-18+-brightgreen?logo=node.js" alt="Node.js" />
                         </a>
                         <a class="techstack" href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" target="_blank" rel="noopener noreferrer">
-                            <img src ="https://img.shields.io/badge/HTML-5-orange?logo=html5" alt ="HTML5 Logo" />
+                            <img src="https://img.shields.io/badge/HTML-5-orange?logo=html5" alt="HTML5" />
                         </a>
                         <a class="techstack" href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">
-                            <img src ="https://img.shields.io/badge/CSS-3-blue?logo=css3" alt ="CSS Logo" />
+                            <img src="https://img.shields.io/badge/CSS-3-blue?logo=css3" alt="CSS3" />
                         </a>
-                    </p>
-                    <p class="card-text"><span class="fw-bold">Status:</span> Completed 6/7/2025</p>
-                    <p class="card-text"><span class="fw-bold">Description:</span> A warranty calculator that
-                        helps agents assist customers in determining the warranty status of their products.</p>
-                    <a href="https://github.com/timlp79/warranty_calculator2/" class="card-link" target="_blank" rel="noopener noreferrer">GitHub
-                        Project</a>
-                    <a href="https://timlp79.github.io/warranty_calculator2/" class="card-link" target="_blank" rel="noopener noreferrer">Live
-                        Demo</a>
+                    </div>
+                    <p class="project-meta"><strong>Completed:</strong> June 7, 2025</p>
+                    <p class="card-text" style="font-size: 0.9rem;">A warranty calculator that helps agents assist customers in determining the warranty status of their products.</p>
+                    <div class="card-actions">
+                        <a href="https://timlp79.github.io/warranty_calculator2/" class="card-link-primary" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-box-arrow-up-right"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/timlp79/warranty_calculator2/" class="card-link" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-github"></i> GitHub
+                        </a>
+                    </div>
                 </div>
             </div>
+
+          </div>
         </div>
     </div>
 </div>
-<!-- Bootstrap JS (Bundle includes Popper) -->
+
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

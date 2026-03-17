@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Tim Palacios | Website</title>
+    <title>Tim Palacios | Developer &amp; Analyst</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -11,7 +11,7 @@
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Custom CSS (optional) -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css"/>
 
     <!-- Google tag (gtag.js) -->
@@ -20,7 +20,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-NB6CGJ47D2');
     </script>
 </head>
@@ -29,23 +28,23 @@
 <div class="container-fluid">
     <div class="row flex-nowrap">
         <!-- Sidebar -->
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                <a href="/"
-                   class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <span class="fs-5 d-none d-sm-inline">Tim Palacios</span>
+        <div class="col-auto sidebar-col px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-3 text-white min-vh-100">
+                <a href="/" class="sidebar-brand d-none d-sm-flex w-100">
+                    <i class="bi bi-code-slash" style="color: var(--color-accent);"></i>
+                    Tim Palacios
                 </a>
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i>
-                            <span class="ms-1 d-none d-sm-inline">Home</span>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100" id="menu">
+                    <li class="nav-item w-100">
+                        <a href="index.html" class="nav-link align-middle px-2 active" style="color: var(--color-accent); background: rgba(196,155,99,0.1);">
+                            <i class="fs-5 bi-house-door"></i>
+                            <span class="ms-2 d-none d-sm-inline">Home</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="projects.html" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-folder"></i>
-                            <span class="ms-1 d-none d-sm-inline">Projects</span>
+                    <li class="nav-item w-100">
+                        <a href="projects.html" class="nav-link align-middle px-2">
+                            <i class="fs-5 bi-folder2-open"></i>
+                            <span class="ms-2 d-none d-sm-inline">Projects</span>
                         </a>
                     </li>
                 </ul>
@@ -53,24 +52,24 @@
         </div>
 
         <!-- Main content -->
-        <div class="col py-3">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="oval-frame mb-3">
-                            <img src="img/profile_photo.png" class="img-fluid" alt="My profile photo">
+        <div class="col py-4 px-4">
+            <div class="content-area">
+                <div class="row align-items-start">
+                    <div class="col-md-3 mb-3">
+                        <div class="oval-frame">
+                            <img src="img/profile_photo.png" class="img-fluid" alt="Tim Palacios profile photo">
                         </div>
                     </div>
-                    <div class="col-md-9 px-4">
-                        <h1 class="mb-4">Welcome to My Homepage</h1>
-                        <h2>Hello, I'm Tim.</h2>
-                        <p>
+                    <div class="col-md-9 ps-md-4">
+                        <h1 class="mb-2">Hello, I'm Tim.</h1>
+                        <p class="mb-4" style="font-size: 1.05rem;">
                             I'm a developer and analyst who builds practical, real-world solutions to make work more
-                            efficient, especially in business operations and reporting environments.
+                            efficient — especially in business operations and reporting environments.
                         </p>
 
-                        <h2 class="mt-4">Some tools I have experience with</h2>
-                        <ul class="list-inline">
+                        <div class="section-label"><i class="bi bi-tools"></i> Stack</div>
+                        <h2 class="mt-0 mb-3">Tools I work with</h2>
+                        <ul class="list-inline mb-4">
                             <li class="list-inline-item me-1 mb-1">
                                 <a href="https://www.java.com/" target="_blank" rel="noopener noreferrer">
                                     <img src="https://img.shields.io/badge/Java-ED8B00?logo=openjdk&logoColor=white" alt="Java" />
@@ -123,37 +122,29 @@
                             </li>
                         </ul>
 
-                        <h2 class="mt-4">Projects I Build</h2>
-                        <ul class="list-group mb-3">
-                            <li class="list-group-item">Full-stack web apps using Java/Spring Boot and Javascript/Node.js with SQL Databases</li>
-                            <li class="list-group-item">Automated browser testing using Playwright</li>
-                            <li class="list-group-item">Custom dashboards and reports using Power Query and Power
-                                Pivot
-                            </li>
-                            <li class="list-group-item">Task automation using Power Automate</li>
-                            <li class="list-group-item">Internal tools for tracking tasks, scoring performance, and
-                                improving workflows
-                            </li>
-                            <li class="list-group-item">Integrations with platforms like SharePoint, Google Sheets,
-                                monday.com, and WhatsApp
-                            </li>
+                        <div class="section-label"><i class="bi bi-layers"></i> Focus Areas</div>
+                        <h2 class="mt-0 mb-3">What I build</h2>
+                        <ul class="focus-list">
+                            <li>Full-stack web apps using Java/Spring Boot and JavaScript/Node.js with SQL databases</li>
+                            <li>Automated browser testing using Playwright</li>
+                            <li>Custom dashboards and reports using Power Query and Power Pivot</li>
+                            <li>Task automation using Power Automate</li>
+                            <li>Internal tools for tracking tasks, scoring performance, and improving workflows</li>
+                            <li>Integrations with platforms like SharePoint, Google Sheets, monday.com, and WhatsApp</li>
                         </ul>
 
-                        <p>
-                            Many of my projects are inspired by real-world challenges I’ve encountered in customer
-                            support and reporting roles.
-                            I enjoy solving problems where off-the-shelf tools fall short.
+                        <p style="font-size: 0.925rem; color: var(--color-text-muted);">
+                            Many of my projects are inspired by real-world challenges I've encountered in customer
+                            support and reporting roles. I enjoy solving problems where off-the-shelf tools fall short.
                         </p>
 
-                        <p>
+                        <p style="font-size: 0.925rem; color: var(--color-text-muted);">
                             I'm currently studying <a href="https://www.boisestate.edu/coen-cs/" target="_blank" rel="noopener noreferrer">Computer Science</a> at
-                            <a href="https://www.boisestate.edu/" target="_blank" rel="noopener noreferrer">Boise State University</a> and always looking to
-                            learn more.
+                            <a href="https://www.boisestate.edu/" target="_blank" rel="noopener noreferrer">Boise State University</a> and always looking to learn more.
                         </p>
 
-                        <p>
-                            Feel free to explore my repositories, use anything helpful, or reach out if you’d like to
-                            collaborate.
+                        <p style="font-size: 0.925rem; color: var(--color-text-muted);">
+                            Feel free to explore my repositories, use anything helpful, or reach out if you'd like to collaborate.
                         </p>
                     </div>
                 </div>
@@ -161,7 +152,8 @@
         </div>
     </div>
 </div>
-<!-- Bootstrap JS (Bundle includes Popper) -->
+
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
