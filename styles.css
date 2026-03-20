@@ -7,7 +7,6 @@
    CSS Variables / Custom Properties
    ================================ */
 :root {
-    /* Colors - Light Mode */
     --color-bg: #f4f6f9;
     --color-surface: #ffffff;
     --color-text: #1a1d23;
@@ -21,23 +20,19 @@
     --color-border: rgba(0, 0, 0, 0.08);
     --color-featured-border: rgba(196, 155, 99, 0.5);
 
-    /* Spacing */
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
     --spacing-lg: 2rem;
 
-    /* Transitions */
     --transition-fast: 0.15s ease;
     --transition-normal: 0.2s ease;
     --transition-slow: 0.3s ease;
 
-    /* Shadows */
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.15);
     --shadow-featured: 0 4px 20px rgba(196, 155, 99, 0.2);
 
-    /* Border radius */
     --radius-sm: 6px;
     --radius-md: 10px;
     --radius-lg: 14px;
@@ -77,28 +72,42 @@ body {
     font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
     font-size: 1rem;
     line-height: 1.65;
+    margin: 0;
 }
 
 /* ================================
-   Main Content Area
+   Layout
    ================================ */
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 2rem;
+}
+
 .content-area {
     max-width: 1100px;
 }
 
 /* ================================
-   Navigation / Sidebar
+   Sidebar
    ================================ */
-.bg-dark {
-    background-color: var(--color-dark) !important;
+.sidebar {
+    width: 170px;
+    flex: 0 0 170px;
+    background-color: var(--color-dark);
     border-right: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-@media (min-width: 576px) {
-    .sidebar-col {
-        width: 170px;
-        flex: 0 0 170px;
-    }
+.sidebar-inner {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem;
+    min-height: 100vh;
 }
 
 .sidebar-brand {
@@ -116,8 +125,27 @@ body {
     margin-bottom: 0.75rem;
 }
 
+.sidebar-brand i {
+    color: var(--color-accent);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
 .sidebar-brand:hover {
     color: var(--color-accent);
+}
+
+/* ================================
+   Navigation
+   ================================ */
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    width: 100%;
 }
 
 .nav-link {
@@ -128,6 +156,16 @@ body {
     border-radius: var(--radius-sm);
     padding: 0.45rem 0.6rem;
     transition: color var(--transition-normal), background var(--transition-normal), transform var(--transition-fast);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.nav-link i {
+    font-size: 1.1rem;
+    flex-shrink: 0;
 }
 
 .nav-link:hover,
@@ -137,11 +175,34 @@ body {
     transform: translateX(3px);
 }
 
+.nav-link.active {
+    color: var(--color-accent);
+    background: rgba(196, 155, 99, 0.1);
+}
+
 .nav-link:focus {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
 }
 
+/* ================================
+   Profile Section (index.html)
+   ================================ */
+.profile-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.profile-photo-col {
+    flex: 0 0 auto;
+}
+
+.profile-content-col {
+    flex: 1;
+    min-width: 0;
+}
 
 /* ================================
    Profile / Oval Frame
@@ -229,6 +290,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 2.4rem;
     font-weight: 800;
+    margin-bottom: 0.5rem;
 }
 
 h2 {
@@ -252,7 +314,7 @@ h2 {
 }
 
 /* ================================
-   Cards — Base
+   Cards - Base
    ================================ */
 .card {
     background-color: var(--color-surface);
@@ -260,6 +322,7 @@ h2 {
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
     transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    margin-bottom: 1rem;
 }
 
 .card:hover {
@@ -416,7 +479,7 @@ a.techstack:focus {
 }
 
 /* ================================
-   Focus Areas List (replaces list-group)
+   Focus Areas List (index.html)
    ================================ */
 .focus-list {
     list-style: none;
@@ -437,10 +500,69 @@ a.techstack:focus {
     box-shadow: var(--shadow-sm);
 }
 
-@media (prefers-color-scheme: dark) {
-    .focus-list li {
-        background: var(--color-surface);
-    }
+/* ================================
+   Filter Bar (projects.html)
+   ================================ */
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+}
+
+.filter-pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 100px;
+    padding: 0.3rem 0.85rem;
+    cursor: pointer;
+    transition: color var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.filter-pill:hover {
+    color: var(--color-text);
+    border-color: var(--color-accent);
+}
+
+.filter-pill.active {
+    color: #111;
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+/* ================================
+   Section Groups (projects.html)
+   ================================ */
+.section-group {
+    margin-bottom: 0.5rem;
+}
+
+.section-group .section-label {
+    margin-top: 1rem;
+}
+
+.section-group:first-child .section-label {
+    margin-top: 0;
+}
+
+/* ================================
+   Fade-in Animation
+   ================================ */
+.js .fade-in {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.js .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* ================================
@@ -468,13 +590,64 @@ a:focus {
     .card-featured {
         background: linear-gradient(135deg, rgba(196, 155, 99, 0.08) 0%, var(--color-surface) 55%);
     }
+
+    .filter-pill {
+        background: var(--color-surface);
+    }
+
+    .focus-list li {
+        background: var(--color-surface);
+    }
+}
+
+/* ================================
+   Responsive
+   ================================ */
+@media (max-width: 575px) {
+    .sidebar {
+        width: 52px;
+        flex: 0 0 52px;
+    }
+
+    .sidebar-inner {
+        padding: 0.5rem;
+        align-items: center;
+    }
+
+    .sidebar-label,
+    .nav-label {
+        display: none;
+    }
+
+    .sidebar-brand {
+        justify-content: center;
+        gap: 0;
+        padding-bottom: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-link {
+        justify-content: center;
+        padding: 0.5rem;
+        gap: 0;
+    }
+
+    .main-content {
+        padding: 1.25rem 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column;
+    }
 }
 
 /* ================================
    Print Styles
    ================================ */
 @media print {
-    .bg-dark {
+    .sidebar {
         display: none !important;
     }
 
@@ -483,9 +656,8 @@ a:focus {
         color: black;
     }
 
-    .col {
+    .main-content {
         width: 100% !important;
-        max-width: 100% !important;
     }
 
     .card,
@@ -523,6 +695,11 @@ a:focus {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+    }
+
+    .js .fade-in {
+        opacity: 1;
+        transform: none;
     }
 }
 
