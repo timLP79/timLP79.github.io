@@ -40,9 +40,10 @@ Helps agents determine warranty status for products based on purchase date.
 
 ## Tech
 
-- **Languages**: Java, JavaScript, SQL
-- **Web**: HTML5, CSS3, Bootstrap, Spring Boot, Node.js, Express, Playwright
+- **Languages**: Java, JavaScript, Python, Go, SQL
+- **Web**: HTML5, CSS3, Spring Boot, React, Node.js, Express, Playwright
 - **Data Tools**: Power BI, Power Query, Power Pivot, Excel
+- **AI**: Claude, Gemini
 - **Other**: Git, GitHub Pages, IntelliJ, Linux
 
 ---
